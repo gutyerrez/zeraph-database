@@ -7,12 +7,11 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@types/ioredis": "^4.28.8",
     "@types/pg": "^8.6.4",
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@vyrnn/zeraph-environment": "link:../zeraph-environment",
+    "@types/ioredis": "^4.28.8",
     "@vyrnn/zeraph-provider": "link:../zeraph-provider",
     "ioredis": "^4.28.5",
     "knex": "^1.0.3",

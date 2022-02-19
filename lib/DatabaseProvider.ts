@@ -1,8 +1,6 @@
-import { Env } from '@vyrnn/zeraph-environment'
+import { PostgreSQLDatabaseProvider } from './Provider/implementations/PostgreSQLDatabaseProvider'
 
-import {
-  PostgreSQLDatabaseProvider
-} from './Provider/implementations/PostgreSQLDatabaseProvider'
+import { RedisDatabaseProvider } from './Provider/implementations/RedisDatabaseProvider'
 
 export class DatabaseProvider {
   public static prepare = () => {
@@ -12,6 +10,10 @@ export class DatabaseProvider {
   public static Databases = class {
     public static PostgreSQL = class {
       public static MAIN: PostgreSQLDatabaseProvider
+    }
+
+    public static Redis = class {
+      public static MAIN: RedisDatabaseProvider
     }
   }
 }

@@ -2,18 +2,36 @@ import { IDatabaseProvider } from '..'
 
 import Redis, { Redis as IORedis } from 'ioredis'
 
-import { Env } from '@vyrnn/zeraph-environment'
-
 export class RedisDatabaseProvider implements IDatabaseProvider<IORedis> {
   private provider!: IORedis
 
+  private host!: string
+  private port!: number
+  private username!: string
+  private password!: string
+  private database!: number
+
+  constructor(
+    host: string,
+    port: number,
+    username: string,
+    password: string,
+    database: number
+  ) {
+    this.host = host
+    this.port = port
+    this.username = username
+    this.password = password
+    this.database = database
+  }
+
   public prepare = () => {
     this.provider = new Redis({
-      host: Env.getString('REDIS_HOST'),
-      port: Env.getInt('REDIS_PORT'),
-      username: Env.getString('REDIS_USERNAME'),
-      password: Env.getString('REDIS_PASSWORD'),
-      db: Env.getInt('REDIS_DATABASE')
+      host: this.host,
+      port: this.port,
+      username: this.username,
+      password: this.password,
+      db: this.database
     })
   }
 
