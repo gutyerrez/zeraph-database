@@ -1,0 +1,24 @@
+{
+  "name": "@zeraph/database",
+  "version": "0.0.1-ALPHA",
+  "main": "lib/index.js",
+  "types": "@types/index.d.ts",
+  "license": "MIT",
+  "author": {
+    "name": "Vinícius Gutierrez da Silva Rocha",
+    "email": "srgutyerrez@gmail.com",
+    "url": "https://github.com/gutyerrez"
+  },
+  "dependencies": {
+    "@zeraph/provider": "link:../provider",
+    "ioredis": "^5.2.3"
+  },
+  "devDependencies": {
+    "ts-loader": "^9.4.1",
+    "tsconfig-paths": "^4.1.0",
+    "tsconfig-paths-webpack-plugin": "^4.0.0",
+    "typescript": "^4.8.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
